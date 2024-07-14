@@ -24,7 +24,6 @@ def create_recipe():
     name = data.get("name")
     description = data.get("description")
     category = data.get("category")
-    role = data.get("role", "default_role")  # Provide a default value if role is not provided
 
 
     #Fetch avatar image based on category
