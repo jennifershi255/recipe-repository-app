@@ -16,7 +16,7 @@ def create_recipe():
     data = request.json
 
     # Validations
-    required_fields = ["name","category"]
+    required_fields = ["name","description","category"]
     for field in required_fields:
       if field not in data or not data.get(field):
         return jsonify({"error":f'Missing required field: {field}'}), 400
@@ -24,6 +24,7 @@ def create_recipe():
     name = data.get("name")
     description = data.get("description")
     category = data.get("category")
+    role = data.get("role", "default_role")  # Provide a default value if role is not provided
 
 
     #Fetch avatar image based on category
