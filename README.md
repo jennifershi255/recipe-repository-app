@@ -10,7 +10,8 @@ This project captivated me because it allowed me to merge my passion for cooking
 
 <img width="500" alt="Screen Shot 2024-07-23 at 5 43 31 PM" src="https://github.com/user-attachments/assets/b4805703-7e65-4884-aeec-bb5883b89e0c">
 <img width="500" alt="Screen Shot 2024-07-23 at 5 43 53 PM" src="https://github.com/user-attachments/assets/705fae45-ee5a-4ab1-a700-e0401680e789">
-💡 Light and dark mode viewer capabilities<br>
+🌓 Light and Dark Mode: Enjoy a personalized user interface experience with light and dark mode options.
+📱 Responsive Design: The app is designed to adapt to various screen sizes, ensuring a consistent experience across devices.<br>
 🍕 Profile pictures change based on inputted category<br><br>
 
 <img width="500" alt="Screen Shot 2024-07-23 at 5 44 19 PM" src="https://github.com/user-attachments/assets/3f52f96f-b5d5-4e90-a289-f4cc0f86c577">
