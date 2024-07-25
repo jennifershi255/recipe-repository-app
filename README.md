@@ -20,67 +20,95 @@ This project captivated me because it allowed me to merge my passion for cooking
 ## How to run the app locally
 1. Clone the repository:
 
-```git clone https://github.com/burakorkmez/react-python-tutorial```
+```ruby
+git clone https://github.com/burakorkmez/react-python-tutorial
+```
 
 2. Navigate to the project directory:
 
-```cd react-python-tutorial```
+```ruby
+cd react-python-tutorial
+```
 
 3. Navigate to the backend directory:
 
-```cd backend```
+```ruby
+cd backend
+```
 
 4. Create a virtual environment:
 On macOS and Linux:
 
-```python3 -m venv venv```
+```ruby
+python3 -m venv venv
+```
 
 On Windows:
 
-```python -m venv venv```
+```ruby
+python -m venv venv
+```
 
 5. Activate the virtual environment:
 On macOS and Linux:
 
-```source venv/bin/activate```
+```ruby
+source venv/bin/activate
+```
 
 On Windows:
 
-```venv\Scripts\activate```
+```ruby
+venv\Scripts\activate
+```
 
 6. Install the dependencies:
 
 On macOS and Linux:=
 
-```pip3 install -r requirements.txt```
+```ruby
+pip3 install -r requirements.txt
+```
 
 On Windows:
 
-```pip install -r requirements.txt```
+```ruby
+pip install -r requirements.txt
+```
 
 7. Navigate to the frontend directory:
 
-```cd ../frontend```
+```ruby
+cd ../frontend
+```
 
 8. Install the dependencies:
 
-```npm install```
+```ruby
+npm install
+```
 
 9. Build the frontend:
 
-```npm run build```
+```ruby 
+npm run build
+```
 
 10. Navigate to the backend directory:
 
-```cd ../backend```
+```ruby
+cd ../backend
+```
 
 11. Run the Flask app:
 
-```flask run```
+```ruby
+flask run
+```
 12. Open your browser and go to http://localhost:5000/ to view the app.
 
-## How It's Made
-### Tech Used: Python, React, SQLite, SQLAlchemy, Flask, Chakra UI
+## Tech Used
+- Python, React, SQLite, SQLAlchemy, Flask, Chakra UI<br><br>
 **Why was this stack chosen?** 
 - **Full-Stack Development**: Using this stack allowed me to develop both the front-end and back-end of my application, ensuring seamless integration and communication between the two.
 - **Efficient Development**: The combination of Python/Flask for the back-end and React for the front-end provides a robust, efficient, and scalable way to handle CRUD operations.
