@@ -5,16 +5,16 @@ This project captivated me because it allowed me to merge my passion for cooking
 
 ## Demo
 <img width="500" alt="Screen Shot 2024-07-23 at 5 41 51 PM" src="https://github.com/user-attachments/assets/1a80ed53-68b2-4442-aad5-eea2b15f6c35">
-<img width="500" alt="Screen Shot 2024-07-23 at 5 42 06 PM" src="https://github.com/user-attachments/assets/afb2e653-500a-4d18-8cc9-b06268191993">
-🖥 Pop-up window for creating and updating recipes<br><br>
+<img width="500" alt="Screen Shot 2024-07-23 at 5 42 06 PM" src="https://github.com/user-attachments/assets/afb2e653-500a-4d18-8cc9-b06268191993"><br>
+🖥 Pop-up window for creating and updating recipes<br>
 
 <img width="500" alt="Screen Shot 2024-07-23 at 5 43 31 PM" src="https://github.com/user-attachments/assets/b4805703-7e65-4884-aeec-bb5883b89e0c">
-<img width="500" alt="Screen Shot 2024-07-23 at 5 43 53 PM" src="https://github.com/user-attachments/assets/705fae45-ee5a-4ab1-a700-e0401680e789">
+<img width="500" alt="Screen Shot 2024-07-23 at 5 43 53 PM" src="https://github.com/user-attachments/assets/705fae45-ee5a-4ab1-a700-e0401680e789"><br>
 🌓 Light and Dark Mode: Enjoy a personalized user interface experience with light and dark mode options.<br>
 📱 Responsive Design: The app is designed to adapt to various screen sizes, ensuring a consistent experience across devices.<br>
-🍕 Profile pictures change based on inputted category<br><br>
+🍕 Profile pictures change based on inputted category<br>
 
-<img width="500" alt="Screen Shot 2024-07-23 at 5 44 19 PM" src="https://github.com/user-attachments/assets/3f52f96f-b5d5-4e90-a289-f4cc0f86c577">
+<img width="500" alt="Screen Shot 2024-07-23 at 5 44 19 PM" src="https://github.com/user-attachments/assets/3f52f96f-b5d5-4e90-a289-f4cc0f86c577"><br>
 🔎 Ability to filter by category
 
 ## How to run the app locally
