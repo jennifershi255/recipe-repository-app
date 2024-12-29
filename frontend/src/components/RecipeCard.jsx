@@ -87,7 +87,7 @@ const RecipeCard = ({ recipe, setRecipes }) => {
             <Box>
               <Heading size="md">{recipe.name}</Heading>
               <Link
-                href={recipe.role}
+                href={recipe.link}
                 isExternal
                 color={colorMode === "dark" ? "blue.300" : "blue.500"}
                 textDecoration="underline"

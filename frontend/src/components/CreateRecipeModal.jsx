@@ -132,7 +132,7 @@ const CreateRecipeModal = ({ setRecipes }) => {
               </Flex>
 
               <FormControl>
-                <FormLabel>Description</FormLabel>
+                <FormLabel paddingTop={5}>Description</FormLabel>
                 <Textarea
                   resize={"none"}
                   rows="8"
@@ -146,7 +146,7 @@ const CreateRecipeModal = ({ setRecipes }) => {
               </FormControl>
 
               <FormControl>
-                <FormLabel>Link</FormLabel>
+                <FormLabel paddingTop={5}>Link</FormLabel>
                 <Input
                   placeholder="http://"
                   value={inputs.link}
