@@ -25,9 +25,9 @@ def create_recipe():
     name = data.get("name")
     description = data.get("description")
     category = data.get("category")
-    img_url = data.get("imgUrl")
+    link = data.get("link")
 
-    new_recipe = Recipe(name=name, description=description, category= category, img_url=img_url)
+    new_recipe = Recipe(name=name, description=description, category= category, link=link)
 
     db.session.add(new_recipe) 
     db.session.commit()
