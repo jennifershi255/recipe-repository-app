@@ -10,7 +10,6 @@ export const BASE_URL =
 
 function App() {
   const [recipes, setRecipes] = useState([]); // array to store all recipes fetched from the API
-  const [filteredRecipes, setFilteredRecipes] = useState([]); // array to store recipes after being filtered
 
   useEffect(() => {
     // Fetch all recipes from backend
@@ -45,12 +44,7 @@ function App() {
           </Text>
           🍴
         </Text>
-        <FilterButtons
-          recipes={recipes}
-          filteredRecipes={filteredRecipes}
-          setFilteredRecipes={setFilteredRecipes}
-        />
-        {/* Pass recipes, filteredRecipes, and setFilteredRecipes to FilterButtons */}
+        <FilterButtons />
         <Text
           margin={"20px"}
           textAlign={"center"}
