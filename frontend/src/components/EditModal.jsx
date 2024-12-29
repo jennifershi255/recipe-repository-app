@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Button,
   Box,
   Flex,
@@ -28,7 +27,7 @@ function EditModal({ setRecipes, recipe }) {
   const [isLoading, setIsLoading] = useState(false);
   const [inputs, setInputs] = useState({
     name: recipe.name,
-    role: recipe.role,
+    link: recipe.link,
     description: recipe.description,
     category: recipe.category,
     imgUrl: recipe.imgUrl,
@@ -36,7 +35,7 @@ function EditModal({ setRecipes, recipe }) {
   const toast = useToast();
 
   const handleEditRecipe = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // prevent page reloading
     setIsLoading(true);
     try {
       const res = await fetch(BASE_URL + "/recipes/" + recipe.id, {
@@ -50,8 +49,8 @@ function EditModal({ setRecipes, recipe }) {
       if (!res.ok) {
         throw new Error(data.error);
       }
-      setRecipes((prevRecipes) =>
-        prevRecipes.map((u) => (u.id === recipe.id ? data : u))
+      setRecipes(
+        (prevRecipes) => prevRecipes.map((u) => (u.id === recipe.id ? data : u)) // mapping over the current list of recipes and replacing the old recipe with the updated one
       );
       toast({
         status: "success",
@@ -99,7 +98,7 @@ function EditModal({ setRecipes, recipe }) {
     }
   };
 
-  function DropdownMenu({ selectedCategory, onChange }) {
+  function DropdownMenu({ onChange }) {
     return (
       <Box>
         <Select
@@ -150,7 +149,6 @@ function EditModal({ setRecipes, recipe }) {
                 <FormControl>
                   <FormLabel>Category</FormLabel>
                   <DropdownMenu value={inputs.category} />
-                  {/* <p>Selected category: {inputs.category}</p> */}
                 </FormControl>
               </Flex>
 
@@ -174,9 +172,9 @@ function EditModal({ setRecipes, recipe }) {
                 <FormLabel>Link</FormLabel>
                 <Input
                   placeholder="link"
-                  value={inputs.role}
+                  value={inputs.link}
                   onChange={(e) =>
-                    setInputs((prev) => ({ ...prev, role: e.target.value }))
+                    setInputs((prev) => ({ ...prev, link: e.target.value }))
                   }
                 />
               </FormControl>

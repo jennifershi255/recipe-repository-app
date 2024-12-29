@@ -4,16 +4,16 @@ import RecipeGrid from "./components/RecipeGrid";
 import { useState, useEffect } from "react";
 import FilterButtons from "./components/FilterButtons";
 
-// updated this after recording. Make sure you do the same so that it can work in production
+// sets base url for API requests
 export const BASE_URL =
   import.meta.env.MODE === "development" ? "http://127.0.0.1:5000/api" : "/api";
 
 function App() {
-  const [recipes, setRecipes] = useState([]);
-  const [filteredRecipes, setFilteredRecipes] = useState([]);
+  const [recipes, setRecipes] = useState([]); // array to store all recipes fetched from the API
+  const [filteredRecipes, setFilteredRecipes] = useState([]); // array to store recipes after being filtered
 
   useEffect(() => {
-    // Fetch all recipes
+    // Fetch all recipes from backend
     fetch(`${BASE_URL}/recipes`)
       .then((response) => response.json())
       .then((data) => {
@@ -26,7 +26,6 @@ function App() {
   return (
     <Stack minH={"100vh"}>
       <Navbar setRecipes={setRecipes} />
-
       <Container maxW={"1200px"} my={4}>
         <Text
           fontSize={{ base: "3xl", md: "50" }}

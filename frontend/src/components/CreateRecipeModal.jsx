@@ -12,8 +12,6 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Radio,
-  RadioGroup,
   Select,
   Textarea,
   useDisclosure,
@@ -24,15 +22,18 @@ import { useState } from "react";
 import { BASE_URL } from "../App";
 
 const CreateRecipeModal = ({ setRecipes }) => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const [isLoading, setIsLoading] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure(); // controls visibility of modal
+  const [isLoading, setIsLoading] = useState(false); // tracks whether the form submission is in progress
   const [inputs, setInputs] = useState({
     name: "",
-    role: "",
+    link: "",
     description: "",
     category: "",
   });
+
   const toast = useToast();
+
+  // handles form submissions
   const handleCreateRecipe = async (e) => {
     e.preventDefault(); // prevent page refresh
     setIsLoading(true);
@@ -57,8 +58,8 @@ const CreateRecipeModal = ({ setRecipes }) => {
         duration: 2000,
         position: "top-center",
       });
-      onClose();
-      setRecipes((prevRecipes) => [...prevRecipes, data]);
+      onClose(); // closes modal
+      setRecipes((prevRecipes) => [...prevRecipes, data]); // newly created recipe is added to existing recipes
     } catch (error) {
       toast({
         status: "error",
@@ -68,16 +69,17 @@ const CreateRecipeModal = ({ setRecipes }) => {
       });
     } finally {
       setIsLoading(false);
+      // clear form fields
       setInputs({
         name: "",
-        role: "",
+        link: "",
         description: "",
         category: "",
-      }); // clear inputs
+      });
     }
   };
 
-  function DropdownMenu({ selectedCategory, onChange }) {
+  function DropdownMenu({ onChange }) {
     return (
       <Box>
         <Select
@@ -126,7 +128,6 @@ const CreateRecipeModal = ({ setRecipes }) => {
                 <FormControl>
                   <FormLabel>Category</FormLabel>
                   <DropdownMenu value={inputs.category} />
-                  {/* <p>Selected category: {inputs.category}</p> */}
                 </FormControl>
               </Flex>
 
@@ -144,14 +145,13 @@ const CreateRecipeModal = ({ setRecipes }) => {
                 />
               </FormControl>
 
-              {/* select category*/}
               <FormControl>
                 <FormLabel>Link</FormLabel>
                 <Input
                   placeholder="http://"
-                  value={inputs.role}
+                  value={inputs.link}
                   onChange={(e) =>
-                    setInputs({ ...inputs, role: e.target.value })
+                    setInputs({ ...inputs, link: e.target.value })
                   }
                 />
               </FormControl>

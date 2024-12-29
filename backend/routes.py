@@ -5,17 +5,18 @@ from models import Recipe
 # Get all recipes
 @app.route("/api/recipes",methods=["GET"])
 def get_recipes():
-  recipes = Recipe.query.all() 
-  result = [recipe.to_json() for recipe in recipes]
-  return jsonify(result)
+  recipes = Recipe.query.all() # fetches all recipes from the database
+  result = [recipe.to_json() for recipe in recipes] # converts each recipe to json
+  return jsonify(result) # returns as json
 
 # Create a recipe
 @app.route("/api/recipes",methods=["POST"])
 def create_recipe():
   try:
-    data = request.json
+    data = request.json # get JSON data from the request body
 
     # Validations
+    # checks if all the required fields are there, or else it returns an error
     required_fields = ["name","description","category"]
     for field in required_fields:
       if field not in data or not data.get(field):
@@ -24,16 +25,8 @@ def create_recipe():
     name = data.get("name")
     description = data.get("description")
     category = data.get("category")
+    img_url = data.get("imgUrl")
 
-
-    #Fetch avatar image based on category
-    if category == "breakfast":
-      img_url = f"https://avatar.iran.liara.run/public/boy?username={name}"
-    elif category == "female":
-      img_url = f"https://avatar.iran.liara.run/public/girl?username={name}"
-    else:
-      img_url = None
-     
     new_recipe = Recipe(name=name, description=description, category= category, img_url=img_url)
 
     db.session.add(new_recipe) 
@@ -49,7 +42,7 @@ def create_recipe():
 @app.route("/api/recipes/<int:id>",methods=["DELETE"])
 def delete_recipe(id):
   try:
-    recipe = Recipe.query.get(id)
+    recipe = Recipe.query.get(id) # finds the recipe with the given ID
     if recipe is None:
       return jsonify({"error":"Recipe not found"}), 404
     
@@ -64,12 +57,13 @@ def delete_recipe(id):
 @app.route("/api/recipes/<int:id>",methods=["PATCH"])
 def update_recipe(id):
   try:
-    recipe = Recipe.query.get(id)
+    recipe = Recipe.query.get(id) # finds recipe with the given ID
     if recipe is None:
       return jsonify({"error":"Recipe not found"}), 404
     
     data = request.json
 
+    # fields are updated if they are present in the request. ".get" ensures that the old value is kept if no new value is provided
     recipe.name = data.get("name",recipe.name)
     recipe.description = data.get("description",recipe.description)
     recipe.category = data.get("category",recipe.category)
