@@ -8,11 +8,7 @@ class Recipe(db.Model):
   link = db.Column(db.String(200), nullable=True)
   description = db.Column(db.Text, nullable=False)
   category = db.Column(db.String(10), nullable=False)
-<<<<<<< HEAD
-=======
   link = db.Column(db.String(200), nullable = True)
-
->>>>>>> my-new-branch
 
 # convert objects to JSON to prepare the data for API responses 
   def to_json(self):
@@ -22,10 +18,7 @@ class Recipe(db.Model):
       "link":self.link,
       "description":self.description,
       "category":self.category,
-<<<<<<< HEAD
-=======
       "link":self.link,
->>>>>>> my-new-branch
     }
 
  
